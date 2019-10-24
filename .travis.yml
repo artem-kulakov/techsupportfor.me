@@ -1,0 +1,26 @@
+language: ruby
+cache: bundler
+bundler_args: --without development --jobs 4
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - imagemagick
+      - ghostscript
+
+env:
+  - DB=postgresql
+  - DB=mysql
+  - DB=sqlite3
+
+rvm:
+  - 2.1.10
+  - 2.2.5
+  - 2.3.1
+
+before_script:
+  - psql -c 'CREATE DATABASE brimir_test;' -U postgres
+  - mysql -e 'create database brimir_test;'
+  - cp config/database.travis.yml config/database.yml
+  - bundle exec rake db:migrate
