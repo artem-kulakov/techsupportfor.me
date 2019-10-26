@@ -23,7 +23,7 @@ class EmailAddress < ActiveRecord::Base
   before_create :generate_verification_token
 
   scope :ordered, -> { order(:default).reverse_order.order(:email) }
-  scope :verified, -> { where(verification_token: nil) }
+  scope :verified, -> { where.not(verification_token: nil) }
 
   def self.default_email
     unless EmailAddress.verified.where(default: true).first.nil?
