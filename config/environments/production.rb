@@ -78,7 +78,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-config.action_mailer.default_options = { from: 'helpdesk@alttechnical.com' }
+config.action_mailer.default_options = { from: 'helpdesk@techsupportfor.me' }
 config.action_mailer.default_url_options = { host: 'techsupportfor.me' }
 
 end
