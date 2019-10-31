@@ -20,9 +20,11 @@
               <%= f.label :to_email_address_id, t('activerecord.attributes.reply.from'), class: 'ptm' %>
             </div>
             <div class="medium-8 columns">
-              <% blank = @outgoing_addresses.count == 0 ? EmailAddress.default_email : '' %>
-              <%= f.collection_select :to_email_address_id, @outgoing_addresses, :id, :formatted,
-                  include_blank: blank, label: false %>
+              <% if @outgoing_addresses.count == 0 %>
+                <%= f.collection_select :to_email_address_id, @outgoing_addresses, :id, :formatted, include_blank: EmailAddress.default_email, label: false %>
+              <% else %>
+                <%= f.collection_select :to_email_address_id, @outgoing_addresses, :id, :formatted, label: false %>
+              <% end %>
             </div>
           <% end %>
         </div>
