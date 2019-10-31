@@ -20,7 +20,7 @@ class Rule < ActiveRecord::Base
 
   enum filter_operation: [:contains, :equals]
   enum action_operation: [:assign_label, :notify_user, :change_status,
-                          :change_priority, :assign_user]
+                          :change_priority, :assign_user, :apply_template]
 
   def filter(ticket)
     if ticket.respond_to?(filter_field)
@@ -63,6 +63,9 @@ class Rule < ActiveRecord::Base
         ticket.assignee = user
         ticket.save
       end
+
+    elsif action_operation == 'apply_template'
+      #
 
     end
   end

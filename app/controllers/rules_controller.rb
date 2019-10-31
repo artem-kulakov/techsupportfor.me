@@ -90,6 +90,12 @@ class RulesController < ApplicationController
           value: t(p)
         }
       end
+      @templates = EmailTemplate.ticket_received.map do |t|
+        {
+          key: t.name,
+          value: t.name
+        }
+      end
     end
 
 end

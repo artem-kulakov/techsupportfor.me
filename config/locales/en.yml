@@ -316,6 +316,7 @@ en:
           change_status: Change status to
           change_priority: Change priority to
           assign_user: Assign to
+          apply_template: Apply email template
 
       email_address:
         email: Email address
