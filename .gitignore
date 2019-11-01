@@ -23,6 +23,7 @@ app/assets/stylesheets/scaffolds.css.scss
 
 # uploads
 public/system
+public/assets
 data
 
 # Capistrano deploy details
