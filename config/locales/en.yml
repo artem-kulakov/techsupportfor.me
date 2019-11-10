@@ -247,8 +247,8 @@ en:
   new_email_template: New email template
   email_templates: Email templates
   deleting_this_item_will_unset_option: 'Deleting this template will unset the following option:'
-  set_active: Set active
-  status: Status
+  set_active: Set default
+  status: Default
 
 # email_templates/edit
   modify_email_template: Modify email template
