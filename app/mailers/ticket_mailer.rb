@@ -115,6 +115,8 @@ class TicketMailer < ActionMailer::Base
           email.to.to_a + email.cc.to_a + email.bcc.to_a)
 
       # add new ticket
+      content = content.encode('utf-8', 'binary', invalid: :replace, undef: :replace, replace: '')
+
       ticket = Ticket.create({
         from: from_address,
         orig_to: to_addresses,
