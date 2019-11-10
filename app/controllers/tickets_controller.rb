@@ -166,7 +166,7 @@ class TicketsController < ApplicationController
       @ticket = TicketMailer.receive(params[:message])
       if @tenant.notify_client_when_ticket_is_created
         # we should always have a (default) template when option is selected
-        template = EmailTemplate.by_kind('ticket_received').active.first
+        template = Rule.apply_template(@ticket)
         unless template.nil?
           @reply = SystemReply.create_from_assignment(@ticket, template)
           @reply.try(:notification_mails).try(:each, &:deliver_now)
