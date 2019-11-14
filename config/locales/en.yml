@@ -72,6 +72,9 @@ en:
   no_content: No content
   ticket_id: Ticketnumber
   status: Status
+  not_set: Not set
+  billable: Billable
+  non_billable: Non billable
   assignee: Assignee
   num_replies:
     one: '%{count} reply'
@@ -293,6 +296,10 @@ en:
           deleted: Deleted
           waiting: Waiting
         priority: Priority
+        billable:
+          not_set: Not set
+          billable: Billable
+          non_billable: Non billable
         assignee_id: Assignee
         created_at: Created at
         to: To verified email address

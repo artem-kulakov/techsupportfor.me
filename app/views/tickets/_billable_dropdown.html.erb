@@ -1,0 +1,11 @@
+<ul id="billable-<%= ticket.id %>" class="f-dropdown" data-dropdown-content>
+  <% Ticket.billables.keys.each do |value| %>
+    <li>
+      <%= link_to ticket_path(ticket, ticket: { billable: value }, short: short),
+          method: :patch, remote: true do %>
+        <%# <span class="cc-billable-<%= value %1> fa fa-fw fa-circle-o"></span> %>
+        <%= t(value) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

@@ -79,6 +79,20 @@
               <% end %>
             <% end %>
           </li>
+          <li class="ib mrl">
+            <% if can? :update, @ticket %>
+              <a href="#" data-dropdown="billable-<%= @ticket.id %>">
+                <span class="fa fa-dollar text-default"></span>
+                <span class="show-for-print hide"><%= t(:billable) %>:</span>
+                <%= t(@ticket.billable, scope: 'activerecord.attributes.ticket.billable') %>
+              </a>
+              <%= render 'billable_dropdown', ticket: @ticket, short: false %>
+            <% else %>
+              <span class="fa fa-dollar text-default"></span>
+              <span class="show-for-print hide"><%= t(:billable) %>:</span>
+              <%= t(@ticket.billable) %>
+            <% end %>
+          </li>
         </ul>
         <ul class="no-m">
           <li class="ib" data-labelings>

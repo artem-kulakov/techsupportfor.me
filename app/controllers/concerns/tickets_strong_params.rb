@@ -27,6 +27,7 @@ module TicketsStrongParams
         :status,
         :assignee_id,
         :priority,
+        :billable,
         :message_id,
         :content_type,
         attachments_attributes: [
