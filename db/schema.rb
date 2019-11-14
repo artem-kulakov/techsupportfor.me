@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191113203516) do
+ActiveRecord::Schema.define(version: 20191114203932) do
 
   create_table "attachments", force: :cascade do |t|
     t.integer  "attachable_id",     limit: 4
@@ -180,6 +180,7 @@ ActiveRecord::Schema.define(version: 20191113203516) do
     t.string   "orig_to",                  limit: 255
     t.string   "orig_cc",                  limit: 255
     t.integer  "billable",                 limit: 4,          default: 0,      null: false
+    t.integer  "task",                     limit: 4,          default: 0,      null: false
   end
 
   add_index "tickets", ["assignee_id"], name: "index_tickets_on_assignee_id", using: :btree

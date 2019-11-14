@@ -40,6 +40,7 @@ class Ticket < ActiveRecord::Base
   enum status: [:open, :closed, :deleted, :waiting, :merged]
   enum priority: [:unknown, :low, :medium, :high]
   enum billable: [:not_set, :billable, :non_billable]
+  enum task: [:not_defined, :development, :support]
 
   after_update :log_status_change
   after_create :create_status_change, :create_message_id_if_blank

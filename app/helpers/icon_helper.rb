@@ -21,4 +21,14 @@ module IconHelper
     end
   end
   
+  def task_icon_class(task)
+    case task
+    when 'not_defined'
+      'fa fa-minus'
+    when 'development'
+      'fa fa-code'
+    when 'support'
+      'fa fa-wrench'
+    end
+  end
 end

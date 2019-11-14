@@ -1,0 +1,11 @@
+<ul id="task-<%= ticket.id %>" class="f-dropdown" data-dropdown-content>
+  <% Ticket.tasks.keys.each do |value| %>
+    <li>
+      <%= link_to ticket_path(ticket, ticket: { task: value }, short: short),
+          method: :patch, remote: true do %>
+        <%# <span class="fa <%= task_icon_class(value) %1>"></span> %>
+        <%= t(value) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
