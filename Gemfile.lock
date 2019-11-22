@@ -145,7 +145,7 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql2 (0.4.4)
+    mysql2 (0.4.10)
     net-ldap (0.11)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -285,7 +285,7 @@ DEPENDENCIES
   jbuilder (~> 2.2)
   jquery-rails
   letter_opener
-  mysql2
+  mysql2 (~> 0.4.10)
   omniauth-google-oauth2
   paperclip
   pry
@@ -301,3 +301,6 @@ DEPENDENCIES
   trix
   uglifier (>= 1.0.3)
   will_paginate
+
+BUNDLED WITH
+   1.17.3

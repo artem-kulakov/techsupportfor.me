@@ -7,8 +7,8 @@ development:
   adapter: mysql2
   host: localhost
   database: helpdesk
-  username: helpdesk
-  password: jyRyJgFDevTRj7df
+  username: root
+  password: hasanyone123
 #  adapter: sqlite3
 #  database: db/development.sqlite3
 #  pool: 5
@@ -25,7 +25,7 @@ test:
 
 production:
   adapter: mysql2
-  host: localhost 
+  host: localhost
   database: helpdesk
   username: helpdesk
   password: jyRyJgFDevTRj7df

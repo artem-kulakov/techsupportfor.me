@@ -41,7 +41,8 @@ end
 # Optional PostgreSQL for production
 ###gem 'pg', group: :postgresql
 # Optional MySQL for production
-gem 'mysql2', group: :mysql
+# gem 'mysql2', group: :mysql
+gem 'mysql2', '~> 0.4.10', group: :mysql
 # Optional SQLite for development
 ###gem 'sqlite3', group: :sqlite
 
