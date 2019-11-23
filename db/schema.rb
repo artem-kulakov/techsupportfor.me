@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191114203932) do
+ActiveRecord::Schema.define(version: 20191122044441) do
 
   create_table "attachments", force: :cascade do |t|
     t.integer  "attachable_id",     limit: 4
@@ -167,9 +167,9 @@ ActiveRecord::Schema.define(version: 20191114203932) do
     t.integer  "assignee_id",              limit: 4
     t.string   "message_id",               limit: 255
     t.integer  "user_id",                  limit: 4
-    t.string   "content_type",             limit: 255,        default: "html"
-    t.integer  "status",                   limit: 4,          default: 0,      null: false
-    t.integer  "priority",                 limit: 4,          default: 0,      null: false
+    t.string   "content_type",             limit: 255,                                 default: "html"
+    t.integer  "status",                   limit: 4,                                   default: 0,      null: false
+    t.integer  "priority",                 limit: 4,                                   default: 0,      null: false
     t.integer  "to_email_address_id",      limit: 4
     t.integer  "locked_by_id",             limit: 4
     t.datetime "locked_at"
@@ -179,8 +179,9 @@ ActiveRecord::Schema.define(version: 20191114203932) do
     t.datetime "raw_message_updated_at"
     t.string   "orig_to",                  limit: 255
     t.string   "orig_cc",                  limit: 255
-    t.integer  "billable",                 limit: 4,          default: 0,      null: false
-    t.integer  "task",                     limit: 4,          default: 0,      null: false
+    t.integer  "billable",                 limit: 4,                                   default: 0,      null: false
+    t.integer  "task",                     limit: 4,                                   default: 0,      null: false
+    t.decimal  "time_spent",                                  precision: 10, scale: 1, default: 0.0,    null: false
   end
 
   add_index "tickets", ["assignee_id"], name: "index_tickets_on_assignee_id", using: :btree

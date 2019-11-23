@@ -28,6 +28,7 @@ module TicketsStrongParams
         :assignee_id,
         :priority,
         :billable,
+        :time_spent,
         :task,
         :message_id,
         :content_type,

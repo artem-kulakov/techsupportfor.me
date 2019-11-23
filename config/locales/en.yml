@@ -105,6 +105,10 @@ en:
   change_assignee: Assign ticket
   assign: Assign
 
+# tickets/_change_time_spent_form
+  change_time_spent: Change time spent
+  set: Set
+
 # tickets/locks/create
   ticket_locked_by_somebody_else: Ticket is currently already being handled by somebody else
 

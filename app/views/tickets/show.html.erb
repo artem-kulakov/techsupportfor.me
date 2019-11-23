@@ -30,6 +30,8 @@
             <span class="fa fa-tag fa-fw ib"></span>
             <%= t(:ticket_id) %>: <%= @ticket.id %>
           </li>
+        </ul>
+        <ul class="no-m">
           <li class="ib mrl">
             <% if can? :update, @ticket %>
               <a href="#" data-dropdown="statuses-<%= @ticket.id %>">
@@ -91,6 +93,27 @@
               <span class="fa fa-dollar text-default"></span>
               <span class="show-for-print hide"><%= t(:billable) %>:</span>
               <%= t(@ticket.billable) %>
+            <% end %>
+          </li>
+          <li class="ib mrl">
+            <% if can? :update, @ticket %>
+              <a href="#" data-reveal-id="change-time-spent">
+                <span class="fa fa-clock-o text-default"></span>
+                <span class="show-for-print hide"><%= t(:time_spent) %>:</span>
+                <% if @ticket.time_spent == 0 %>
+                  <%= t(:not_set) %>
+                <% else %>
+                  <%= @ticket.time_spent.to_s + ' hours'  %>
+                <% end %>
+              </a>
+            <% else %>
+              <span class="fa fa-clock-o text-default"></span>
+              <span class="show-for-print hide"><%= t(:time_spent) %>:</span>
+              <% if @ticket.time_spent == 0 %>
+                <%= t(:not_set) %>
+              <% else %>
+                <%= @ticket.time_spent.to_s + ' hours'  %>
+              <% end %>
             <% end %>
           </li>
           <li class="ib mrl">
@@ -195,3 +218,4 @@
 <% end %>
 
 <%= render 'change_assignee_form', { ticket: @ticket } %>
+<%= render 'change_time_spent_form', { ticket: @ticket } %>

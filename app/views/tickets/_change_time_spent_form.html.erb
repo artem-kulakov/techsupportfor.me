@@ -1,0 +1,13 @@
+<div id="change-time-spent" class="reveal-modal small" data-reveal>
+  <h3><%= t(:change_time_spent) %></h3>
+
+  <%= form_for ticket, remote: true, method: :patch do |f| %>
+    <p>
+      <%= f.number_field(:time_spent, label: 'In hours', step: 0.5) %>
+    </p>
+    <%= f.submit t(:set), class: 'small success no-m button' %>
+  <% end %>
+
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
