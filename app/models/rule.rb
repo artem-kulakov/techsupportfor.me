@@ -67,14 +67,6 @@ class Rule < ActiveRecord::Base
     end
   end
 
-  def template_for(ticket, rule)
-    if action_operation == 'apply_template'
-      template = EmailTemplate.by_kind('ticket_received').where(name: rule.action_value).first
-    else
-      template = EmailTemplate.by_kind('ticket_received').active.first
-    end
-  end
-
   def self.apply_all(ticket)
     Rule.all.each do |rule|
       rule.execute(ticket) if rule.filter(ticket)
@@ -82,10 +74,11 @@ class Rule < ActiveRecord::Base
   end
 
   def self.apply_template(ticket)
-    template = nil
     Rule.all.each do |rule|
-      template = rule.template_for(ticket, rule) if rule.filter(ticket)
+      if rule.filter(ticket)
+        return EmailTemplate.by_kind('ticket_received').where(name: rule.action_value).first if rule.action_operation == 'apply_template'
+      end
     end
-    template
+    EmailTemplate.by_kind('ticket_received').active.first
   end
 end
