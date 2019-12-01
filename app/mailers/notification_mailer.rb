@@ -37,7 +37,7 @@ class NotificationMailer < ActionMailer::Base
         ticket.notified_users.each do |user|
           message = NotificationMailer.new_ticket(ticket, user)
           message.message_id = "<#{ticket.message_id}>"
-          message.deliver_now unless EmailAddress.pluck(:email).include?(user.email)
+          message.deliver_now unless EmailAddress.pluck(:email).include?(user.email) || EmailAddress.pluck(:email).include?(ticket.user.email)
 
           ticket.message_id = message.message_id if ticket.message_id.nil?
         end
