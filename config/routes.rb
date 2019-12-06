@@ -1,7 +1,5 @@
 Brimir::Application.routes.draw do
 
-  get 'reports/new'
-
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth' }
 
   resources :users do
@@ -33,6 +31,8 @@ Brimir::Application.routes.draw do
   resources :email_addresses
 
   resource :settings, only: [:edit, :update]
+
+  resource :reports, only: [:new]
 
   root to: 'tickets#index'
 
