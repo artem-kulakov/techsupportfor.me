@@ -18,9 +18,9 @@
     rows << [
       ticket.labels.pluck(:name).join('|'),
       t(ticket.task),
-      ticket.assignee.nil? ? 'Unassigned' : ticket.assignee.name,
-      ticket.assignee.nil? ? 'Unassigned' : ticket.assignee.email,
-      ticket.replies.internal.last.nil? ? '' : '"' + truncate(strip_tags(ticket.replies.internal.last.content), length: 100) + '"',
+      ticket.assignee.try(:name),
+      ticket.assignee.try(:email),
+      '"' + truncate(strip_tags(ticket.replies.internal.last.try(:content).to_s), length: 100) + '"',
       ticket.time_spent.to_s,
       ticket.created_at.strftime("%m/%d/%Y"),
       t(ticket.billable),
