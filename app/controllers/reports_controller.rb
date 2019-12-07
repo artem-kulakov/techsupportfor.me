@@ -11,7 +11,7 @@ class ReportsController < ApplicationController
         redirect_to new_reports_path
       end
       format.csv do
-        @tickets = Ticket.all
+        @tickets = Ticket.all.last(10)
       end
     end
   end

@@ -50,6 +50,10 @@ class Reply < ActiveRecord::Base
     where.not(type: "StatusReply")
   }
 
+  scope :internal, -> {
+    where(internal: true)
+  }
+
   def reply_to
     reply_to_type.constantize.where(id: self.reply_to_id).first if reply_to_type
   end
