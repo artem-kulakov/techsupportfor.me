@@ -20,7 +20,7 @@
       ticket.task == 'not_defined' ? '-' : t(ticket.task),
       ticket.assignee.try(:name),
       ticket.assignee.try(:email),
-      '"' + truncate(strip_tags(ticket.replies.internal.last.try(:content).to_s), length: 100) + '"',
+      ticket.replies.internal.last.nil? ? '' : '"' + truncate(strip_tags(ticket.replies.internal.last.content[/<div>.*?<\/div>/]), length: 100) + '"',
       ticket.time_spent.to_s,
       ticket.created_at.strftime("%m/%d/%Y"),
       ticket.billable == 'not_set' ? '-' : t(ticket.billable),
