@@ -5,7 +5,7 @@
     </div>
   </div>
 </div>
-<%= form_tag '/reports/download' do %>
+<%= form_tag reports_download_path(:csv, params) do %>
   <div class="row mt mb">
 
     <div class="medium-6 columns">

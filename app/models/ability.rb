@@ -123,6 +123,6 @@ class Ability
     can :manage, EmailTemplate
 
     can :update, Tenant, id: Tenant.current_tenant.id
-    can :new, Report
+    can :manage, Report
   end
 end

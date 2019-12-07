@@ -33,6 +33,7 @@ Brimir::Application.routes.draw do
   resource :settings, only: [:edit, :update]
 
   resource :reports, only: [:new]
+  post 'reports/download'
 
   root to: 'tickets#index'
 
