@@ -1,7 +1,7 @@
 <div class="panel no-bt mbl">
   <div class="row collapse">
     <div class="medium-12 columns">
-      <h4 class="no-m pts pbs">Download report</h4>
+      <h4 class="no-m pts pbs">Tickets Report</h4>
     </div>
   </div>
 </div>
@@ -13,10 +13,10 @@
       <%= label_tag :label %>
       <%= select_tag :label, options_from_collection_for_select(Label.all, "id", "name") %>
 
-      <%= label_tag :start_date %>
+      <%= label_tag 'Start date (opened)' %>
       <%= date_field_tag :start_date %>
 
-      <%= label_tag :end_date %>
+      <%= label_tag 'End date (closed)' %>
       <%= date_field_tag :end_date %>
 
     </div>
