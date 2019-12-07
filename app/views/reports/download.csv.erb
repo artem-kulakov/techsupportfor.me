@@ -7,21 +7,25 @@
     'Notes',
     'Time Spent (hrs)',
     'Date',
-    'Billable Status'
+    'Billable Status',
+    'Ticket ID',
+    'Status'
   ]
 
   rows = []
 
   @tickets.each do |ticket|
     rows << [
-      ticket.labels.first.name,
+      ticket.labels.pluck(:name).join('|'),
       t(ticket.task),
       ticket.assignee.nil? ? 'Unassigned' : ticket.assignee.name,
       ticket.assignee.nil? ? 'Unassigned' : ticket.assignee.email,
       ticket.replies.internal.last.nil? ? 'None' : strip_tags(ticket.replies.internal.last.content),
       ticket.time_spent.to_s,
       ticket.created_at.strftime("%m/%d/%Y"),
-      t(ticket.billable)
+      t(ticket.billable),
+      ticket.id,
+      t(ticket.status, scope: 'activerecord.attributes.ticket.statuses')
     ]
   end
 -%>
