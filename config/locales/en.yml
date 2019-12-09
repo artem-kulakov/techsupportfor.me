@@ -75,7 +75,6 @@ en:
   not_set: Not set
   billable: Billable
   non_billable: Non billable
-  not_defined: Not defined
   development: Development
   support: Support
   assignee: Assignee
@@ -308,7 +307,6 @@ en:
           billable: Billable
           non_billable: Non billable
         task:
-          not_defined: Not defined
           development: Development
           support: Support
         assignee_id: Assignee
