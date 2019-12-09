@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191122044441) do
+ActiveRecord::Schema.define(version: 20191209195325) do
 
   create_table "attachments", force: :cascade do |t|
     t.integer  "attachable_id",     limit: 4
@@ -180,7 +180,7 @@ ActiveRecord::Schema.define(version: 20191122044441) do
     t.string   "orig_to",                  limit: 255
     t.string   "orig_cc",                  limit: 255
     t.integer  "billable",                 limit: 4,                                   default: 0,      null: false
-    t.integer  "task",                     limit: 4,                                   default: 0,      null: false
+    t.integer  "task",                     limit: 4,                                   default: 2,      null: false
     t.decimal  "time_spent",                                  precision: 10, scale: 1, default: 0.0,    null: false
   end
 
