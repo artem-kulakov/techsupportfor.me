@@ -13,10 +13,10 @@
       <%= label_tag :label %>
       <%= select_tag :label, options_from_collection_for_select(Label.all, "id", "name") %>
 
-      <%= label_tag 'Start date (opened)' %>
+      <%= label_tag 'Start date' %>
       <%= date_field_tag :start_date %>
 
-      <%= label_tag 'End date (closed)' %>
+      <%= label_tag 'End date' %>
       <%= date_field_tag :end_date %>
 
     </div>
