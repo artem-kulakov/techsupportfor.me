@@ -3,7 +3,7 @@
 
   <%= form_for ticket, remote: true, method: :patch do |f| %>
     <p>
-      <%= f.number_field(:time_spent, label: 'In hours', step: 0.5) %>
+      <%= f.text_field(:time_spent, label: 'In H:MM format', pattern: '\d{1,5}:[0-5]\d') %>
     </p>
     <%= f.submit t(:set), class: 'small success no-m button' %>
   <% end %>

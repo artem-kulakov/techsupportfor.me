@@ -103,7 +103,7 @@
                 <% if @ticket.time_spent == 0 %>
                   <%= t(:not_set) %>
                 <% else %>
-                  <%= @ticket.time_spent.to_s + ' hours'  %>
+                  <%= @ticket.time_spent %>
                 <% end %>
               </a>
             <% else %>
@@ -112,7 +112,7 @@
               <% if @ticket.time_spent == 0 %>
                 <%= t(:not_set) %>
               <% else %>
-                <%= @ticket.time_spent.to_s + ' hours'  %>
+                <%= @ticket.time_spent %>
               <% end %>
             <% end %>
           </li>
